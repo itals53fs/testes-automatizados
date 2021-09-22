@@ -15,25 +15,22 @@ public class BaseTest {
 
     @BeforeClass
     public void preCond(){
-        driverPath = "C:\\Users\\aline.zanin\\Documents\\chromedriver.exe"; 
-        url = System.getProperty("user.dir")+"/src/paginas/componentes.html"; 
-        System.setProperty("webdriver.chrome.driver", driverPath);
-        driver = new ChromeDriver(); 
-        driver.get(url);
-        driver.manage().window().maximize();
+        driverPath = "C:\\Users\\ulisses\\Documents\\chromedriver.exe"; //variavel que armazena o caminho do driver
+        url = System.getProperty("user.dir")+"/src/paginas/componentes.html"; //varivel que armazena o diretório da aplicação
+        System.setProperty("webdriver.chrome.driver", driverPath);//instancia do driver
+        driver = new ChromeDriver(); //instancia do navegador
+        driver.get(url);// abre o navegador na url especificada
+        driver.manage().window().maximize();    //maximiza a tela
     }
-
-
 
 
     @AfterClass
     public void posCond(){
-      driver.quit();
+        //driver.quit();
     }
 
     protected WebDriver getDriver() {
         return driver;
     }
-
 
 }
